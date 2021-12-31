@@ -1,0 +1,129 @@
+:root{
+  --base: 200;
+  --saturation:30%;
+  
+  --basecolor: hsl(var(--base),var(--saturation),30%);
+  --btcolor: hsl(var(--base),var(--saturation),80%);
+}
+
+
+body {
+  background: radial-gradient(at 50% 30%, #fff, hsl(var(--base),var(--saturation),50%));
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  color: var(--basecolor);
+  height: 100vh; 
+}
+
+.card svg{
+	 width:100%;
+}
+
+.card {
+    text-align: center;
+	  margin:20px auto 0px auto;
+	  width:280px;
+  	animation: lazymove 5s infinite;
+    animation-direction: alternate-reverse;
+  	animation-fill-mode: backwards;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing:1px;
+    font-weight:400;
+    margin: 0em;
+}
+
+.card p {
+    font-size: 0.9em;
+    line-height: 1.4em;
+	  margin: 5px 0px 20px 5px;
+}
+
+.card button {
+    background:var(--btcolor);
+    border:none;
+    padding: 0.7em 1.2em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: auto;
+}
+
+#dandelion-group { 
+  animation: lazymove4 5s infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: backwards;
+  transform-origin: center bottom;
+  }
+
+.dandelion-right{
+    fill: var(--basecolor);
+    transform-origin: center bottom;
+    animation: lazymove2 5s infinite;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: backwards;
+}
+
+.dandelion-left
+{
+    fill: var(--basecolor);
+    transform-origin: center bottom;
+    animation: lazymove4 5s infinite;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: backwards;
+}
+
+.shadow {
+    background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.5));
+    filter:blur(10px);
+    animation: shadowmove 5s infinite;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: backwards;
+    width:150px;
+    height:60px;
+    margin:10px auto; 
+    border-radius:10px;
+	  transform: perspective(900px) rotatex(80deg);
+ }
+
+.credit a{
+    text-transform: uppercase;
+    font-size:0.4em;
+    text-decoration: none;
+    letter-spacing:3px;
+    color: var(--basecolor);
+    margin:50px auto;
+    width:90%;
+}
+
+@keyframes lazymove {
+  0% {transform: translate(0px,-20px);}
+  100% {transform: translate(0px,20px);}
+}
+
+@keyframes lazymove2 {
+  0% {transform: rotate(6deg) scale(1);}
+  100% {transform:rotate(0deg) scale(0.9);}
+}
+
+@keyframes lazymove3 {
+  0% {transform: translate(0px,-5px) scale(1);}
+  100% {transform: translate(0px,5px) scale(0.8);}
+}
+
+@keyframes lazymove4 {
+  0% {transform: rotate(-3deg) scale(1);}
+  100% {transform:rotate(0deg) scale(0.9);}
+}
+
+@keyframes shadowmove {
+  0% {opacity:0.3; transform:scaleX(1.2) perspective(900px) rotatex(80deg);}
+  100% {opacity:0.8; transform:scaleX(0.7) perspective(900px) rotatex(80deg);}
+}
+
